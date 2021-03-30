@@ -5,6 +5,7 @@
         <title>COMDES | Exit Review 2021</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="stylesheet" href="https://use.typekit.net/nyc4ree.css">
         <link rel="stylesheet" href="CSS/styles.css">
     </head>
     <body>
@@ -34,10 +35,73 @@
 
         <!-- HERO -->
         <section id='hero' class='hero'><div class='content-wrap'>
+          <h1>Let's Do Gaming</h1>
+        </div></section>
+
+        <!-- ABOUT -->
+        <section id='about' class='about'><div class='content-wrap'>
+          <h2>Exit Review - Spring 2021</h2>
+        </div></section>
+
+        <!-- DESIGNERS -->
+        <section id='designers' class='designers'><div class='content-wrap'>
+          <h2>Designers</h2>
+          <ul class='tags'>
+            <li><button class='filter-tag' data-label='all'>All</button></li>
+            <li><button class='filter-tag' data-label='artDirection'>Art Direction</button></li>
+            <li><button class='filter-tag' data-label='branding'>Branding</button></li>
+            <li><button class='filter-tag' data-label='designResearch'>Design Research</button></li>
+            <li><button class='filter-tag' data-label='illustration'>Illustration</button></li>
+            <li><button class='filter-tag' data-label='motionVideo'>Motion/Video</button></li>
+            <li><button class='filter-tag' data-label='packaging'>Packaging</button></li>
+            <li><button class='filter-tag' data-label='publications'>Publication</button></li>
+            <li><button class='filter-tag' data-label='typography'>Typography</button></li>
+            <li><button class='filter-tag' data-label='uxUi'>UX/UI</button></li>
+          </ul>
+          
+          
+          <ul class='designer-list'>
+
+            <!-- Designer Name -->
+            <li class='designer' data-tags='artDirection packaging'>
+              <img src='' class='designer-off' />
+              <img src='' class='designer-on' />
+              <h3>Designer Name</h3>
+              <div class='buttons'>
+                <button class='meet-me' data-label='designerName'>Meet Me</button>
+                <a href='#' class='portfolio-link'>View Portfolio</a>
+              </div>
+            </li>
+
+          </ul> <!-- END: designer-list -->
+
 
         </div></section>
 
+        <!-- MODALS -->
+        <div class='modal-container'>
+          
+          <div class='modal' data-label='designerName' data-state='inactive'>
+            <h2>Designer Name</h2>
+            <ul class='socials'>
+              <a href='#' class='instagram'><img src=''/></a>
+              <a href='#' class='linkedin'><img src=''/></a>
+            </ul>
+            <ul class='tags'>
+              <li>Tag Name</li>
+              <li>Tag Name</li>
+              <li>Tag Name</li>
+            </ul>
+            <p class='bio'>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic natus facere voluptatibus rem cum eaque illum dolore assumenda. Rerum, nisi beatae! Eius sapiente autem molestiae obcaecati perspiciatis! Tempora, nobis reprehenderit?
+            </p>
+            <a href='#' class='portfolio-link'>View Portfolio</a>
+          </div>
+
+        </div>
+
         <!-- SCRIPTS -->
+        <script type='text/javascript' src='JS/modals.js'></script>
         <script type='text/javascript' src='JS/utils.js'></script>
         <script type='text/javascript' src='JS/scripts.js'></script>
     </body>
