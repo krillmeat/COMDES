@@ -16,7 +16,7 @@ class MODALS{
     let t = e.currentTarget;
     let match = document.querySelector(`.modal[data-label='${t.dataset.label}']`);
 
-    document.querySelector(".modal[data-state='active']").dataset.state = 'inactive';
+    if(document.querySelectorAll(".modal[data-state='active']").length > 0) document.querySelector(".modal[data-state='active']").dataset.state = 'inactive';
     match.dataset.state = 'active';
 
   }
