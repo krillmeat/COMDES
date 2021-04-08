@@ -6,9 +6,26 @@
   --blue: #14A1FE;
   --indigo: #00074A;
   --cy: 'cy', sans-serif;
+  --avenir: 'Avenir', sans-serif;
+}
+
+body{
+  background: var(--blue);
+  font-family: var(--avenir);
 }
 
 h1, h2{ font-family: var(--cy); font-weight: 700 }
+
+button{ font-family: inherit }
+
+/* section.hero:hover,
+section.about:hover{ cursor: url('../MEDIA/CURSORS/white-cursor.png') 12 12, auto }
+
+section.designers:hover{ cursor: url('../MEDIA/CURSORS/blue-cursor.png') 12 12, auto }
+
+button:hover{ cursor: url('../MEDIA/CURSORS/white-cursor.png') 12 12, auto } */
+
+body:hover,a:hover,button:hover{ cursor: url('../MEDIA/CURSORS/indigo-cursor.png') 12 12, auto }
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -107,11 +124,26 @@ section{
   width: 100%;
 }
 
-section .content-wrap{
+section .content-wrap,
+footer .content-wrap{
   width: 100%;
     max-width: 1000px;
   margin: 0 auto;
-  padding: 32px;
+  padding: 32px 8px;
+}
+
+section h2{
+  font-size: 2em;
+  line-height: 1.2;
+}
+
+section p{
+  font-size: 1.125em;
+  line-height: 1.4;
+}
+
+section h2 + p{
+  margin-top: 16px;
 }
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -120,7 +152,21 @@ section .content-wrap{
 ::::::::::::::::::::                                                                         ::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
-section.hero{}
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::                                                                         ::::::::::::::::::::
+::::::::::::::::::::  ABOUT                                                                  ::::::::::::::::::::
+::::::::::::::::::::                                                                         ::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+section.about{}
+
+section.about h2{
+  color: var(--green);
+}
+
+section.about p{
+  color: var(--white);
+}
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::                                                                         ::::::::::::::::::::
@@ -129,26 +175,167 @@ section.hero{}
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
 section.designers{
+  background: var(--white);
+}
 
+section.designers h2{
+  color: var(--blue);
+}
+
+section.designers p{
+  color: var(--blue);
 }
 
 section.designers ul.tags{
   display: flex;
+    flex-wrap: wrap;
+  width: 100%;
+  margin-top: 16px;
+}
+
+section.designers ul.tags li{
+  width: calc(50% - 4px);
+  margin: 4px;
+}
+
+section.designers ul.tags li:nth-of-type(odd){ margin-left: 0 }
+section.designers ul.tags li:nth-of-type(even){ margin-right: 0 }
+
+section.designers ul.tags li button{
+  width: 100%;
+  background: var(--blue);
+  border: none;
+  padding: 8px 16px;
+
+  font-size: .875em;
+  color: var(--white);
+  text-transform: lowercase;
 }
 
 section.designers ul.designer-list{
   display: flex;
     flex-wrap: wrap;
     justify-content: center;
+  margin-top: 16px;
 }
 
 section.designers ul.designer-list li.designer{
-  border: 1px solid var(--indigo);
-  margin: 8px;
+  position: relative;
+  width: calc(50% - 8px);
+  margin: 4px;
+  overflow: hidden
+}
+
+section.designers ul.designer-list li.designer .img-wrap{ position: relative }
+
+section.designers ul.designer-list li.designer .img-wrap::after{
+  content: '';
+  position: absolute;
+  left: 0px; bottom: 0px;
+  width: 100%; height: 40%;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.75) 50%, rgba(0,0,0,1) 100%);
+  opacity: .85;
+}
+
+section.designers ul.designer-list li.designer img{ 
+  display: block; 
+  width: 100%;
+}
+
+section.designers ul.designer-list li.designer img.designer-on{
+  transform: scale(1.5) translateY(6.125%);
+}
+
+section.designers ul.designer-list li.designer img.designer-on{ display: none }
+
+section.designers ul.designer-list li.designer:hover img.designer-off{ display: none }
+section.designers ul.designer-list li.designer:hover img.designer-on{ display: block }
+
+section.designers ul.designer-list li.designer .info-wrap{
+  position: absolute;
+  bottom: 0px; left: 0px;
+  width: 100%;
+  height: 54px;
+  padding: 4px 6px;
+  overflow: hidden;
+  transition: height .2s linear;
+}
+
+section.designers ul.designer-list li.designer:hover .info-wrap{
+  height: 97px;
+}
+
+section.designers ul.designer-list li.designer .info-wrap h3{
+  color: var(--white);
+  font-size: 1.25em;
+  line-height: 1.1;
+  margin-bottom: 4px;
+  letter-spacing: .5px;
+}
+
+section.designers ul.designer-list li.designer .info-wrap h3 span{
+  display: block;
 }
 
 section.designers ul.designer-list li.designer .buttons{
   display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+section.designers ul.designer-list li.designer .buttons button,
+section.designers ul.designer-list li.designer .buttons a{
+  background: none;
+  border: none;
+  height: 20px;
+  padding: 0px;
+  color: var(--white);
+  text-transform: lowercase;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+@media (min-width: 550px){
+  section.designers ul.designer-list li.designer img.designer-on{
+    transform: scale(1.5) translateY(12.5%);
+  }
+}
+
+@media (min-width: 600px){
+  section.designers ul.tags li{
+    width: calc(20% - 8px);
+  }
+}
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::                                                                         ::::::::::::::::::::
+::::::::::::::::::::  SPONSORS                                                               ::::::::::::::::::::
+::::::::::::::::::::                                                                         ::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+section.sponsors{
+  background: var(--blue);
+}
+
+section.sponsors h2{
+  color: var(--white);
+  text-align: center;
+}
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::                                                                         ::::::::::::::::::::
+::::::::::::::::::::  FOOTER                                                                 ::::::::::::::::::::
+::::::::::::::::::::                                                                         ::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+footer{
+  background: var(--indigo);
+}
+
+footer a{
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.125em;
 }
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -158,12 +345,39 @@ section.designers ul.designer-list li.designer .buttons{
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
 div.modal-container{
+  position: fixed;
+  top: 200vh; left: 200vw;
+  width: 100%; height: 100vh;
+  background: rgba(0,7,74,0);
+  padding: 16px;
 
+  transition: background .2s linear;
+}
+
+body[data-state='modal'] div.modal-container{
+  background: rgba(0,7,74,.75);
+}
+
+div.modal-container[data-state='show']{
+  top: 0px; left: 0px;
 }
 
 div.modal-container .modal{
+  width: 100%;
   max-width: 680px;
+  margin: 24vh auto 0 auto;
   border: 1px solid var(--indigo);
+  background: var(--white);
+  padding: 16px;
+  opacity: 0;
+  transform: translateY(25px);
+
+  transition: all .4s linear;
+}
+
+div.modal-container .modal[data-state='active']{
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 div.modal-container .modal[data-state='active']{ background: pink }

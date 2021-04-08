@@ -6,9 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="https://use.typekit.net/nyc4ree.css">
+        <link rel="stylesheet" href="CSS/fonts.css">
         <link rel="stylesheet" href="CSS/styles.css">
     </head>
-    <body>
+    <body data-state='default'>
         <!-- NAVIGATION -->
         <div class='nav-wrapper'>
             <nav class='top'>
@@ -40,12 +41,14 @@
 
         <!-- ABOUT -->
         <section id='about' class='about'><div class='content-wrap'>
-          <h2>Exit Review - Spring 2021</h2>
+          <h2>txtst exit review spring&nbsp;2021</h2>
+          <p>after rigorous self-testing and several rounds of professional development, we are ready to be released into the public.</p>
         </div></section>
 
         <!-- DESIGNERS -->
         <section id='designers' class='designers'><div class='content-wrap'>
-          <h2>Designers</h2>
+          <h2>choose your designer</h2>
+          <p>whether it's wielding the pen tool or crafting code, there are fifty-two new players ready to launch.</p>
           <ul class='tags'>
             <li><button class='filter-tag' data-label='all'>All</button></li>
             <li><button class='filter-tag' data-label='artDirection'>Art Direction</button></li>
@@ -64,12 +67,32 @@
 
             <!-- Designer Name -->
             <li class='designer' data-tags='artDirection packaging'>
-              <img src='' class='designer-off' />
-              <img src='' class='designer-on' />
-              <h3>Designer Name</h3>
-              <div class='buttons'>
-                <button class='meet-me' data-label='designerName'>Meet Me</button>
-                <a href='#' class='portfolio-link'>View Portfolio</a>
+              <div class='img-wrap'>
+                <img src='MEDIA/PORTRAITS/Aguilar_Tanya_1.jpg' class='designer-off' />
+                <img src='MEDIA/PORTRAITS/Aguilar_Tanya_2.jpg' class='designer-on' />
+              </div>
+              <div class='info-wrap'>
+                <h3><span class='first'>Designer</span> <span class='last'>Name</span></h3>
+                <div class='buttons'>
+                  <button class='meet-me' data-label='designerName'>Meet Me</button>
+                  <a href='#' class='portfolio-link'>View Portfolio</a>
+                </div>
+              </div>
+            </li>
+
+            <!-- Designer Name -->
+            <li class='designer' data-tags='artDirection packaging'>
+              <div class='img-wrap'>
+                <img src='MEDIA/PORTRAITS/Ainsworth_Elizabeth_1.jpg' class='designer-off' />
+                <img src='MEDIA/PORTRAITS/Ainsworth_Elizabeth_2.jpg' class='designer-on' />
+                <img src='' class='designer-on' />
+              </div>
+              <div class='info-wrap'>
+                <h3><span class='first'>Designer</span> <span class='last'>Name</span></h3>
+                <div class='buttons'>
+                  <button class='meet-me' data-label='designerName'>Meet Me</button>
+                  <a href='#' class='portfolio-link'>View Portfolio</a>
+                </div>
               </div>
             </li>
 
@@ -78,12 +101,24 @@
 
         </div></section>
 
-        <footer><a href='#'>Previous Years</a></footer>
+        <section id='sponsors' class='sponsors'><div class='content-wrap'>
+          <h2>meet our sponsors</h2>
+          <ul>
+            <li><img src=''/></li>
+            <li><img src=''/></li>
+            <li><img src=''/></li>
+            <li><img src=''/></li>
+            <li><img src=''/></li>
+          </ul>
+        </div></section>
+
+        <footer><div class='content-wrap'><a href='#'>Previous Years</a></div></footer>
 
         <!-- MODALS -->
         <div class='modal-container'>
           
           <div class='modal' data-label='designerName' data-state='inactive'>
+            <button class='close-modal'>&times;</button>
             <h2>Designer Name</h2>
             <ul class='socials'>
               <a href='#' class='instagram'><img src=''/></a>
