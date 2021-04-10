@@ -152,6 +152,10 @@ section h2 + p{
 ::::::::::::::::::::                                                                         ::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
+section.hero{
+  min-height: 50vh;
+}
+
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::                                                                         ::::::::::::::::::::
 ::::::::::::::::::::  ABOUT                                                                  ::::::::::::::::::::
@@ -305,6 +309,14 @@ section.designers ul.designer-list li.designer .buttons a{
   section.designers ul.tags li{
     width: calc(20% - 8px);
   }
+
+  section.designers ul.designer-list li.designer{
+    width: calc(25% - 8px);
+    margin: 4px;
+  }
+
+  section.designers ul.tags li:nth-of-type(odd){ margin-left: 4px }
+  section.designers ul.tags li:nth-of-type(even){ margin-right: 4px }
 }
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -364,7 +376,7 @@ div.modal-container[data-state='show']{
 
 div.modal-container .modal{
   width: 100%;
-  max-width: 680px;
+  max-width: 800px;
   margin: 24vh auto 0 auto;
   border: 1px solid var(--indigo);
   background: var(--white);
@@ -380,8 +392,27 @@ div.modal-container .modal[data-state='active']{
   transform: translateY(0px);
 }
 
+div.modal-container .modal button.close-modal{
+  position: absolute;
+  top: 0px; right: 0px;
+}
+
+div.modal-container .modal img.meet-me-img{
+  width: 100%;
+}
+
 div.modal-container .modal[data-state='active']{ background: pink }
 
 div.modal-container .modal ul.tags{
   display: flex;
+}
+
+@media (min-width: 600px){
+  div.modal-container .modal{
+    display: flex;
+  }
+
+  div.modal-container .modal img.meet-me-img{
+    width: 50%;
+  }
 }
