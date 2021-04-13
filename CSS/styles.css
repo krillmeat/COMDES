@@ -30,91 +30,6 @@ body:hover,a:hover,button:hover{ cursor: url('../MEDIA/CURSORS/indigo-cursor.png
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::                                                                         ::::::::::::::::::::
-::::::::::::::::::::  NAVIGATION                                                             ::::::::::::::::::::
-::::::::::::::::::::                                                                         ::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-
-.nav-wrapper{}
-
-nav{
-  position: fixed;
-}
-
-/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::::::::::::::::::::  MOBILE                                                                 ::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-
-nav .mobile{
-  display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::::::::::::::::::::  DESKTOP                                                                ::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-
-nav .desktop{
-  display: none; /* TOGGLED BY MEDIA QUERY */
-    justify-content: space-between;
-    align-items: center;
-}
-
-/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::::::::::::::::::::                                                                         ::::::::::::::::::::
-::::::::::::::::::::  TOP                                                                    ::::::::::::::::::::
-::::::::::::::::::::                                                                         ::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-
-nav.top{
-  top: 0; left: 0;
-  width: 100%;
-}
-
-@media all and (min-width: 700px){
-  nav.top .mobile{ display: none }
-  nav.top .desktop{ display: flex }
-}
-
-/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::::::::::::::::::::  MOBILE                                                                 ::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-
-nav.top .mobile{
-  width: 100%;
-}
-
-nav.top button.mobile-menu{
-  border: none;
-  background: none;
-  padding: 8px;
-}
-
-nav.top button.mobile-menu .rect{
-  width: 24px;
-  height: 4px;
-  background: pink;
-  margin-bottom: 4px;
-}
-
-nav.top button.mobile-menu .rect:last-of-type{
-  margin-bottom: 0;
-}
-
-/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::::::::::::::::::::  DESKTOP                                                                ::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-
-nav.top .desktop{}
-
-nav.top .desktop ul{
-  display: flex;
-}
-
-/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::::::::::::::::::::                                                                         ::::::::::::::::::::
 ::::::::::::::::::::  SECTIONS                                                               ::::::::::::::::::::
 ::::::::::::::::::::                                                                         ::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -127,9 +42,9 @@ section{
 section .content-wrap,
 footer .content-wrap{
   width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
   margin: 0 auto;
-  padding: 32px 8px;
+  padding: 16px 8px;
 }
 
 section h2{
@@ -144,6 +59,18 @@ section p{
 
 section h2 + p{
   margin-top: 16px;
+}
+
+@media (min-width: 550px){
+  section .content-wrap{
+    padding: 32px 16px;
+  }
+}
+
+@media (min-width: 625px){
+  section .content-wrap{
+    padding: 32px;
+  }
 }
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -164,12 +91,45 @@ section.hero{
 
 section.about{}
 
+section.about .info{
+  max-width: 475px;
+  margin: 0 0 0 auto;
+}
+
 section.about h2{
   color: var(--green);
 }
 
 section.about p{
+  max-width: 600px;
   color: var(--white);
+}
+
+@media (min-width: 600px){
+  section.about{ font-size: 1.125em }
+
+  section.about .content-wrap{ padding: 0 16px; }
+
+  section.about .info{
+    border-top: 4px solid var(--white);
+    border-right: 4px solid var(--white);
+    padding: 32px;
+  }
+}
+
+@media (min-width: 850px){
+  section.about .content-wrap{ padding: 0 32px; }
+
+  section.about .info{ padding: 64px 32px; letter-spacing: .5px; }
+  section.about .info h2 + p{ margin-top: 32px }
+}
+
+@media (min-width: 1000px){
+  section.about .content-wrap{ padding: 0 48px; }
+}
+
+@media (min-width: 1150px){
+  section.about .info{ padding-bottom: 128px }
 }
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -182,11 +142,16 @@ section.designers{
   background: var(--white);
 }
 
-section.designers h2{
+section.designers .top-info{
+  padding-bottom: 16px;
+}
+
+section.designers .top-info h2{
   color: var(--blue);
 }
 
-section.designers p{
+section.designers .top-info p{
+  max-width: 475px;
   color: var(--blue);
 }
 
@@ -194,7 +159,6 @@ section.designers ul.tags{
   display: flex;
     flex-wrap: wrap;
   width: 100%;
-  margin-top: 16px;
 }
 
 section.designers ul.tags li{
@@ -306,8 +270,54 @@ section.designers ul.designer-list li.designer .buttons a{
 }
 
 @media (min-width: 600px){
+  section.designers  .content-wrap{
+    padding: 0 16px;
+  }
+
+  section.designers .top-info{
+    padding: 32px;
+    border-right: 4px solid var(--blue);
+    font-size: 1.125em;
+  }
+
+  section.designers .designer-content{
+    padding: 16px;
+      padding-bottom: 32px;
+    border-top: 4px solid var(--blue);
+    border-left: 4px solid var(--blue);
+  }
+
+  section.designers ul.tags li{
+    width: calc(50% - 8px);
+  }
+
+  section.designers ul.designer-list li.designer{
+    width: calc(33.3% - 8px);
+    margin: 4px;
+  }
+
+  section.designers ul.tags li:nth-of-type(odd){ margin-left: 4px }
+  section.designers ul.tags li:nth-of-type(even){ margin-right: 4px }
+}
+
+@media (min-width: 850px){
+  section.designers  .content-wrap{
+    padding: 0 32px;
+  }
+
+  section.designers .top-info{ padding: 64px 32px; letter-spacing: .5px; }
+
+  section.designers .top-info h2 + p{ margin-top: 32px }
+
   section.designers ul.tags li{
     width: calc(20% - 8px);
+  }
+
+  section.designers .designer-content{
+    padding: 32px;
+      padding-bottom: 64px;
+    border-top: 4px solid var(--blue);
+    border-left: 4px solid var(--blue);
   }
 
   section.designers ul.designer-list li.designer{
@@ -317,6 +327,24 @@ section.designers ul.designer-list li.designer .buttons a{
 
   section.designers ul.tags li:nth-of-type(odd){ margin-left: 4px }
   section.designers ul.tags li:nth-of-type(even){ margin-right: 4px }
+}
+
+@media (min-width: 1000px){
+  section.designers .top-info{ padding: 64px; }
+  section.designers .content-wrap{ padding: 0 48px; }
+  section.designers .designer-content{ 
+    padding: 48px; 
+      padding-bottom: 64px; 
+  }
+}
+
+@media (min-width: 1150px){
+  section.designers .top-info{ padding-top: 128px }
+  section.designers .designer-content{ padding-bottom: 128px }
+  section.designers ul.designer-list li.designer{
+    width: calc(25% - 16px);
+    margin: 8px;
+  }
 }
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

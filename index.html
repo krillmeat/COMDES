@@ -10,30 +10,6 @@
         <link rel="stylesheet" href="CSS/styles.css">
     </head>
     <body data-state='default'>
-        <!-- NAVIGATION -->
-        <div class='nav-wrapper'>
-            <nav class='top'>
-                <div class='mobile'>
-                    <a class='logo' href='#'>
-                        Logo
-                    </a>
-                    <button class='mobile-menu'>
-                        <div class='rect'></div><div class='rect'></div><div class='rect'></div>
-                    </button> 
-                </div>
-                <div class='desktop'>
-                    <a class='logo' href="#">
-                        Logo
-                    </a>
-                    <ul>
-                        <li><a href='#'>Link</a></li>
-                        <li><a href='#'>Link</a></li>
-                        <li><a href='#'>Link</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-
         <!-- HERO -->
         <section id='hero' class='hero'><div class='content-wrap'>
           <h1>Game On</h1>
@@ -41,95 +17,99 @@
 
         <!-- ABOUT -->
         <section id='about' class='about'><div class='content-wrap'>
-          <h2>txst exit review spring&nbsp;2021</h2>
-          <p>after rigorous self-testing and several rounds of professional development, we are ready to be released into the public.</p>
+          <div class='info'>
+            <h2>txst exit review spring&nbsp;2021</h2>
+            <p>after rigorous self-testing and several rounds of professional development, we are ready to be released into the public.</p>
+          </div>
         </div></section>
 
         <!-- DESIGNERS -->
         <section id='designers' class='designers'><div class='content-wrap'>
-          <h2>choose your designer</h2>
-          <p>whether it's wielding the pen tool or crafting code, there are fifty-two new players ready to launch.</p>
-          <ul class='tags'>
-            <li><button class='filter-tag' data-label='all'>All</button></li>
-            <li><button class='filter-tag' data-label='artDirection'>Art Direction</button></li>
-            <li><button class='filter-tag' data-label='branding'>Branding</button></li>
-            <li><button class='filter-tag' data-label='designResearch'>Design Research</button></li>
-            <li><button class='filter-tag' data-label='illustration'>Illustration</button></li>
-            <li><button class='filter-tag' data-label='motionVideo'>Motion/Video</button></li>
-            <li><button class='filter-tag' data-label='packaging'>Packaging</button></li>
-            <li><button class='filter-tag' data-label='publications'>Publication</button></li>
-            <li><button class='filter-tag' data-label='typography'>Typography</button></li>
-            <li><button class='filter-tag' data-label='uxUi'>UX/UI</button></li>
-          </ul>
+          <div class='top-info'>
+            <h2>choose your designer</h2>
+            <p>whether it's wielding the pen tool or crafting code, there are fifty-two new players ready to launch.</p>
+          </div>
+          <div class='designer-content'>
+            <ul class='tags'>
+              <li><button class='filter-tag' data-label='all'>All</button></li>
+              <li><button class='filter-tag' data-label='artDirection'>Art Direction</button></li>
+              <li><button class='filter-tag' data-label='branding'>Branding</button></li>
+              <li><button class='filter-tag' data-label='designResearch'>Design Research</button></li>
+              <li><button class='filter-tag' data-label='illustration'>Illustration</button></li>
+              <li><button class='filter-tag' data-label='motionVideo'>Motion/Video</button></li>
+              <li><button class='filter-tag' data-label='packaging'>Packaging</button></li>
+              <li><button class='filter-tag' data-label='publications'>Publication</button></li>
+              <li><button class='filter-tag' data-label='typography'>Typography</button></li>
+              <li><button class='filter-tag' data-label='uxUi'>UX/UI</button></li>
+            </ul>
           
-          
-          <ul class='designer-list'>
+            <ul class='designer-list'>
 
-            <!-- Designer Name -->
-            <li class='designer' data-tags='artDirection packaging'>
-              <div class='img-wrap'>
-                <img src='MEDIA/PORTRAITS/Aguilar_Tanya_1.jpg' class='designer-off' />
-                <img src='MEDIA/PORTRAITS/Aguilar_Tanya_2.jpg' class='designer-on' />
-              </div>
-              <div class='info-wrap'>
-                <h3><span class='first'>Designer</span> <span class='last'>Name</span></h3>
-                <div class='buttons'>
-                  <button class='meet-me' data-label='designerName'>Meet Me</button>
-                  <a href='#' class='portfolio-link'>View Portfolio</a>
+              <!-- Designer Name -->
+              <li class='designer' data-tags='artDirection packaging'>
+                <div class='img-wrap'>
+                  <img src='MEDIA/PORTRAITS/Aguilar_Tanya_1.jpg' class='designer-off' />
+                  <img src='MEDIA/PORTRAITS/Aguilar_Tanya_2.jpg' class='designer-on' />
                 </div>
-              </div>
-            </li>
-
-            <!-- Designer Name -->
-            <li class='designer' data-tags='artDirection packaging'>
-              <div class='img-wrap'>
-                <img src='MEDIA/PORTRAITS/Ainsworth_Elizabeth_1.jpg' class='designer-off' />
-                <img src='MEDIA/PORTRAITS/Ainsworth_Elizabeth_2.jpg' class='designer-on' />
-                <img src='' class='designer-on' />
-              </div>
-              <div class='info-wrap'>
-                <h3><span class='first'>Designer</span> <span class='last'>Name</span></h3>
-                <div class='buttons'>
-                  <button class='meet-me' data-label='designerName'>Meet Me</button>
-                  <a href='#' class='portfolio-link'>View Portfolio</a>
+                <div class='info-wrap'>
+                  <h3><span class='first'>Designer</span> <span class='last'>Name</span></h3>
+                  <div class='buttons'>
+                    <button class='meet-me' data-label='designerName'>Meet Me</button>
+                    <a href='#' class='portfolio-link'>View Portfolio</a>
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <!-- Designer Name -->
-            <li class='designer' data-tags='artDirection packaging'>
-              <div class='img-wrap'>
-                <img src='MEDIA/PORTRAITS/Ainsworth_Elizabeth_1.jpg' class='designer-off' />
-                <img src='MEDIA/PORTRAITS/Ainsworth_Elizabeth_2.jpg' class='designer-on' />
-                <img src='' class='designer-on' />
-              </div>
-              <div class='info-wrap'>
-                <h3><span class='first'>Designer</span> <span class='last'>Name</span></h3>
-                <div class='buttons'>
-                  <button class='meet-me' data-label='designerName'>Meet Me</button>
-                  <a href='#' class='portfolio-link'>View Portfolio</a>
+              <!-- Designer Name -->
+              <li class='designer' data-tags='artDirection packaging'>
+                <div class='img-wrap'>
+                  <img src='MEDIA/PORTRAITS/Ainsworth_Elizabeth_1.jpg' class='designer-off' />
+                  <img src='MEDIA/PORTRAITS/Ainsworth_Elizabeth_2.jpg' class='designer-on' />
+                  <img src='' class='designer-on' />
                 </div>
-              </div>
-            </li>
-
-            <!-- Designer Name -->
-            <li class='designer' data-tags='artDirection packaging'>
-              <div class='img-wrap'>
-                <img src='MEDIA/PORTRAITS/Ainsworth_Elizabeth_1.jpg' class='designer-off' />
-                <img src='MEDIA/PORTRAITS/Ainsworth_Elizabeth_2.jpg' class='designer-on' />
-                <img src='' class='designer-on' />
-              </div>
-              <div class='info-wrap'>
-                <h3><span class='first'>Designer</span> <span class='last'>Name</span></h3>
-                <div class='buttons'>
-                  <button class='meet-me' data-label='designerName'>Meet Me</button>
-                  <a href='#' class='portfolio-link'>View Portfolio</a>
+                <div class='info-wrap'>
+                  <h3><span class='first'>Designer</span> <span class='last'>Name</span></h3>
+                  <div class='buttons'>
+                    <button class='meet-me' data-label='designerName'>Meet Me</button>
+                    <a href='#' class='portfolio-link'>View Portfolio</a>
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-          </ul> <!-- END: designer-list -->
+              <!-- Designer Name -->
+              <li class='designer' data-tags='artDirection packaging'>
+                <div class='img-wrap'>
+                  <img src='MEDIA/PORTRAITS/Ainsworth_Elizabeth_1.jpg' class='designer-off' />
+                  <img src='MEDIA/PORTRAITS/Ainsworth_Elizabeth_2.jpg' class='designer-on' />
+                  <img src='' class='designer-on' />
+                </div>
+                <div class='info-wrap'>
+                  <h3><span class='first'>Designer</span> <span class='last'>Name</span></h3>
+                  <div class='buttons'>
+                    <button class='meet-me' data-label='designerName'>Meet Me</button>
+                    <a href='#' class='portfolio-link'>View Portfolio</a>
+                  </div>
+                </div>
+              </li>
 
+              <!-- Designer Name -->
+              <li class='designer' data-tags='artDirection packaging'>
+                <div class='img-wrap'>
+                  <img src='MEDIA/PORTRAITS/Ainsworth_Elizabeth_1.jpg' class='designer-off' />
+                  <img src='MEDIA/PORTRAITS/Ainsworth_Elizabeth_2.jpg' class='designer-on' />
+                  <img src='' class='designer-on' />
+                </div>
+                <div class='info-wrap'>
+                  <h3><span class='first'>Designer</span> <span class='last'>Name</span></h3>
+                  <div class='buttons'>
+                    <button class='meet-me' data-label='designerName'>Meet Me</button>
+                    <a href='#' class='portfolio-link'>View Portfolio</a>
+                  </div>
+                </div>
+              </li>
+
+            </ul> <!-- END: designer-list -->
+          </div> <!-- END: designer-content -->
 
         </div></section>
 
