@@ -6,6 +6,7 @@ window.onload = function(){
 function init(){
     console.log("%cInitializing...","color:#999");
 
+    document.querySelector("section.hero img").src = `MEDIA/game-on_logo.gif?v=${Date.now()}`;
     setupHero();
     window.addEventListener("resize", function(){
       setupHero();
@@ -17,7 +18,7 @@ function init(){
     setTimeout(function(){
       document.body.dataset.state = "default";
       setupAboutLine(lineOne);
-    },8000)
+    },6000)
 }
 
 function setupHero(){
