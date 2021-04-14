@@ -14,6 +14,11 @@ body{
   font-family: var(--avenir);
 }
 
+body[data-state='load']{ overflow-y: scroll;}
+
+body[data-state='load'] section:not(.hero),
+body[data-state='load'] footer{ display: none }
+
 h1, h2{ font-family: var(--cy); font-weight: 700 }
 
 button{ font-family: inherit }
@@ -26,6 +31,12 @@ section.designers:hover{ cursor: url('../MEDIA/CURSORS/blue-cursor.png') 12 12, 
 button:hover{ cursor: url('../MEDIA/CURSORS/white-cursor.png') 12 12, auto } */
 
 body:hover,a:hover,button:hover{ cursor: url('../MEDIA/CURSORS/indigo-cursor.png') 12 12, auto }
+
+.screen-reader-only{
+  position: fixed;
+  top: -1000px; left: -1000px;
+  width: 0px; height: 0px; padding: 0px;
+}
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -83,17 +94,68 @@ section.hero{
   min-height: 50vh;
 }
 
+section.hero .content-wrap{
+  text-align: center;
+  padding: 0px;
+  max-width: 10000px;
+}
+
+section.hero .logo-wrap{
+  position: relative;
+  width: 100%;
+    max-width: 1080px;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+section.hero img{
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+section.hero .logo-wrap .line-one{
+  display: none;
+  position: absolute;
+  top: 0px; left: 56.25%;
+  width: 3px; height: 0;
+  background: var(--white);
+  border-radius: 2px;
+  transition: height 2s ease-out;
+}
+
+@media (min-width: 600px){
+  section.hero .logo-wrap .line-one{ display: block }
+}
+
+@media (min-width: 900px){
+  section.hero .logo-wrap .line-one{ display: block; width: 4px; }
+}
+
+@media (min-width: 900px){
+  section.hero .logo-wrap .line-one{ display: block; width: 5px; }
+}
+
+@media (min-width: 1075px){
+  section.hero img{
+    width: auto;
+  }
+}
+
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::                                                                         ::::::::::::::::::::
 ::::::::::::::::::::  ABOUT                                                                  ::::::::::::::::::::
 ::::::::::::::::::::                                                                         ::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
-section.about{}
+section.about{ position: relative }
 
 section.about .info{
   max-width: 475px;
   margin: 0 0 0 auto;
+  border-radius: 2px;
 }
 
 section.about h2{
@@ -105,14 +167,23 @@ section.about p{
   color: var(--white);
 }
 
+section.about .line-two{
+  display: none;
+  position: absolute;
+  top: 0px;
+  width: 100px; height: 5px;
+  background: var(--white);
+  border-radius: 2px;
+}
+
 @media (min-width: 600px){
+  section.about .line-two{ display: block }
   section.about{ font-size: 1.125em }
 
   section.about .content-wrap{ padding: 0 16px; }
 
   section.about .info{
-    border-top: 4px solid var(--white);
-    border-right: 4px solid var(--white);
+    border-right: 5px solid var(--white);
     padding: 32px;
   }
 }
@@ -144,6 +215,7 @@ section.designers{
 
 section.designers .top-info{
   padding-bottom: 16px;
+  border-radius: 2px;
 }
 
 section.designers .top-info h2{
@@ -296,15 +368,16 @@ section.designers ul.designer-list li.designer .buttons a:hover{
 
   section.designers .top-info{
     padding: 32px;
-    border-right: 4px solid var(--blue);
+    border-right: 5px solid var(--blue);
     font-size: 1.125em;
   }
 
   section.designers .designer-content{
+    border-radius: 2px;
     padding: 16px;
       padding-bottom: 32px;
-    border-top: 4px solid var(--blue);
-    border-left: 4px solid var(--blue);
+    border-top: 5px solid var(--blue);
+    border-left: 5px solid var(--blue);
   }
 
   section.designers ul.tags li{
