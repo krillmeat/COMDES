@@ -6,14 +6,16 @@ window.onload = function(){
 function init(){
     console.log("%cInitializing...","color:#999");
 
-    document.querySelector("section.hero img").src = `MEDIA/game-on_logo.gif?v=${Date.now()}`;
-    setupHero();
-    window.addEventListener("resize", function(){
-      setupHero();
-      setupAboutLine(lineOne);
-    });
-
     modals = new MODALS(document.querySelector(".modal-container"));
+    document.querySelector("section.hero img").src = `MEDIA/game-on_logo.gif?v=${Date.now()}`;
+    
+    setTimeout(function(){
+      setupHero();
+      window.addEventListener("resize", function(){
+        setupHero();
+        setupAboutLine(lineOne);
+      });
+    },500);
 
     setTimeout(function(){
       document.body.dataset.state = "default";
