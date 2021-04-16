@@ -1,4 +1,4 @@
-var modals, lineOne;
+var modals, filter, lineOne;
 window.onload = function(){
     init();
 }
@@ -7,6 +7,7 @@ function init(){
     console.log("%cInitializing...","color:#999");
 
     modals = new MODALS(document.querySelector(".modal-container"));
+    filter = new FILTER(document.querySelector("ul.tags"),"designer");
     document.querySelector("section.hero img").src = `MEDIA/game-on_logo.gif?v=${Date.now()}`;
     
     setTimeout(function(){
@@ -45,7 +46,7 @@ function setupAboutLine(lineOne){
   let aboutInfo = document.querySelector("section.about .info");
   let aboutInfoRect = aboutInfo.getBoundingClientRect();
   let aboutInfoRight = aboutInfoRect.left + aboutInfo.offsetWidth;
-  console.log(aboutInfoRight);
+  
   let fixWidth = aboutInfoRight - lineOne.getBoundingClientRect().left;
   
   lineTwo.style.left = lineOne.getBoundingClientRect().left+"px";
