@@ -21,7 +21,8 @@ function init(){
     setTimeout(function(){
       document.body.dataset.state = "default";
       setupAboutLine(lineOne);
-    },6000)
+    // },6000)
+    },500); // TEMP
 }
 
 function setupHero(){
