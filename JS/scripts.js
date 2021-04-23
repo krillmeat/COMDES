@@ -1,6 +1,8 @@
 var modals, filter, lineOne;
 window.onload = function(){
+  setTimeout(function(){
     init();
+  },3000);
 }
 
 function init(){
@@ -12,6 +14,7 @@ function init(){
     
     setTimeout(function(){
       setupHero();
+      moveLoadBar();
       window.addEventListener("resize", function(){
         setupHero();
         setupAboutLine(lineOne);
@@ -21,19 +24,16 @@ function init(){
     setTimeout(function(){
       document.body.dataset.state = "default";
       setupAboutLine(lineOne);
-    // },6000)
-    },500); // TEMP
+    },6000);
 }
 
 function setupHero(){
-  let heroHeight = document.querySelector("section.hero").offsetHeight;
-  let imgWrap = document.querySelector(".logo-wrap");
-  lineOne = imgWrap.querySelector(".line-one");
+  lineOne = document.querySelector(".line-one");
+  let logoHeight = getLogoHeight();
+  let remHeight = getRemHeight(logoHeight);
   let gif = document.querySelector(".hero img");
-  let logoHeight = gif.offsetHeight * (200/1080);
-  let remHeight = (gif.offsetHeight - logoHeight) / 2;
 
-  let correctHeight = ( heroHeight - logoHeight ) / 2.5;
+  let correctHeight = getCorrectHeight();
 
   // Get the gap that the hero "Should" have
   let heightMod = correctHeight - remHeight;
@@ -52,4 +52,39 @@ function setupAboutLine(lineOne){
   
   lineTwo.style.left = lineOne.getBoundingClientRect().left+"px";
   lineTwo.style.width = fixWidth+"px";
+}
+
+function moveLoadBar(){
+  let loadWrap = document.querySelector(".load-wrap");
+  let loadBar = loadWrap.querySelector(".load-bar");
+
+  let lineLeft = document.querySelector(".line-one").getBoundingClientRect().left;
+  let barDeltaX = lineLeft - (loadBar.getBoundingClientRect().left + loadBar.clientWidth);
+
+  let barTop = loadBar.getBoundingClientRect().top;
+  let logoBottom = ( getCorrectHeight() + getLogoHeight() - 4 );
+
+  let barDeltaY = barTop - logoBottom;
+
+  loadBar.style.transform = `translate(${( barDeltaX - 32 )}px,${-barDeltaY + 32}px)`;
+}
+
+function getCorrectHeight(){
+  let heroHeight = document.querySelector("section.hero").offsetHeight;
+
+  let gif = document.querySelector(".hero img");
+  let logoHeight = gif.offsetHeight * (200/1080);
+
+  return ( heroHeight - logoHeight ) / 2.5;
+}
+
+function getLogoHeight(){
+  let gif = document.querySelector(".hero img");
+  return gif.offsetHeight * (200/1080);
+}
+
+function getRemHeight(logoHeight){
+  let gif = document.querySelector(".hero img");
+
+  return (gif.offsetHeight - logoHeight) / 2;
 }
