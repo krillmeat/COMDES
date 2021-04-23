@@ -103,11 +103,13 @@ section.hero .content-wrap{
 section.hero .load-wrap{
   position: absolute;
   top: calc(50% - 64px);  left: calc(50% - 160px);
-  z-index: 9999;
+  z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+body[data-state='modal'] section.hero .load-wrap{ display: none }
 
 section.hero .load-wrap .load-bar{
   width: 320px;
@@ -194,7 +196,7 @@ section.hero .logo-wrap .line-one{
 ::::::::::::::::::::                                                                         ::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
-section.about{ position: relative }
+section.about{ position: relative;  }
 
 section.about .info{
   max-width: 475px;
@@ -254,6 +256,8 @@ section.about .line-two{
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
 section.designers{
+  /* position: relative;
+  z-index: 200; */
   background: var(--white);
 }
 
